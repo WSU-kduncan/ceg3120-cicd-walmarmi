@@ -1,4 +1,4 @@
-## README-CD.md
+## Part 1:
 
 # 1. Generating tags
  - How to see tags in a git repository: git tag
@@ -20,3 +20,41 @@ Workflow:
 # 3. Testing and validating:
 	- To test: run `git tag v1.0.0` then `git push origin v1.0.0`
 	- GitHub & DockerHub: In your repo's Actions, it should show the status of your image to be 'SUCCESS' and in Dockerhub, it should show up in your DockerHub repositories.
+
+## Part 2:
+
+# 1. EC2 Instance Details:
+- Instance type: Amazon 
+- Instance type: t2.medium
+- Volume Size: 30 
+- Security Configuration: 80 & 9000
+- Justification: 
+	- `Port 80`: Open for web traffic, specifically for the Angular application
+	- `Port 9000`: For testing webhook locally like payloads from GitHub.
+
+# 2. Docker Setup on OS on the EC2 instance:
+- `sudo yum update -y`
+- `sudo yum install -y docker`
+- `sudo service docker start`
+- `sudo usermod -a -G docker ec2-user`
+- To verify: `docker --version`
+- To test container ability: `docker run hello-world`
+
+# 3. Testing on EC2 Instance:
+- `docker pull (username)/(repository-name)`
+- To run: `docker run -d -p 80:80 (username)/(repository-name)`
+
+# 4. Webhooks:
+- To install: `sudo yum install -y webhook`
+- To verify: `webhooks --version`
+- It lets DockerHub send a message to our EC2 when an event happens like pushing a new Docker image. It triggers the bash script to run and refresh with a new image. 
+- `sudo vim /usr/lib/systemd/system/webhook.service`: This is to edit the service file. 
+- `sudo systemctl daemon-reload`: Whenever I had changes, this commands helps refresh it.
+- `sudo systemctl enable webhook.service'
+- `sudo systemctl start webhook.service`
+- `sudo systemctl status webhook.service`
+- `http://(IP address):9000/`: Your response should be a white screen and an `OK`
+
+## Part 3:
+
+
