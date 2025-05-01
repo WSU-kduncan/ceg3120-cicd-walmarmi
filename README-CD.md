@@ -10,7 +10,7 @@
 
 Workflow:
 	- `name`: what it's for
-	- `on: push: tags: -`v*.*.*`: on push, it will run semantic version tags like v1.0.0
+	- `on: push: tags: -v*.*.*`: on push, it will run semantic version tags like v1.0.0
 	- `checkout code`: This will pull the recent and most latest version of your project from GitHub so it has the code to build the Docker image
 	- `extract metadata`: This will read version of the tag and prepare the set of tags for the image. It creates the `latest`, `major`, and `major.minor` tags.
 	- `set up docker build`: this is when you build the docker image on Github's server.
@@ -56,5 +56,17 @@ Workflow:
 - `http://(IP address):9000/`: Your response should be a white screen and an `OK`
 
 ## Part 3:
+- The Goal of this project is to use Docker, GitHub, and an EC2 Instance to ensure the system is automatically updated with the latest version of the application without any manual intervention when a developer commits and pushes new code.
+- I had a lot of trouble with making the scripts since there was always something wrong with either the directory locations or a wrong command. I'm still a little unsure with DockerHub since it seems to not really be working with my code but I will explore alternatives later on.
 
+# Resources:
+- [Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html)
+- [Syntax Guide](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
+- [DevGenius](https://blog.devgenius.io/build-your-first-ci-cd-pipeline-using-docker-github-actions-and-webhooks-while-creating-your-own-da783110e151)
+- [Webhook](https://github.com/adnanh/webhook)
+- [Webhook 2](https://kubernetes.io/docs/reference/access-authn-authz/webhook/)
+- [Webhooks 3](https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks)
+- [Payload Json](https://stackoverflow.com/questions/63803136/how-to-get-my-own-github-events-payload-json-for-testing-github-actions-locally)
+- [Validation](https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries)
+- 
 
