@@ -8,7 +8,7 @@
 # 2. Semantic:
  - Based on the reference, v*.*.* is a safe way for a tag to match and to be pushed to the repository. It will trigger only when the Git tag matching it is pushed. 
 
-Workflow:
+- Workflow:
 	- `name`: what it's for
 	- `on: push: tags: -v*.*.*`: on push, it will run semantic version tags like v1.0.0
 	- `checkout code`: This will pull the recent and most latest version of your project from GitHub so it has the code to build the Docker image
@@ -54,6 +54,7 @@ Workflow:
 - `sudo systemctl start webhook.service`
 - `sudo systemctl status webhook.service`
 - `http://(IP address):9000/`: Your response should be a white screen and an `OK`
+![OK](Images/project5okay.png)
 
 ## Part 3:
 - The Goal of this project is to use Docker, GitHub, and an EC2 Instance to ensure the system is automatically updated with the latest version of the application without any manual intervention when a developer commits and pushes new code.
