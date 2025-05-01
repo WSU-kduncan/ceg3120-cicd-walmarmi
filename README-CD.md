@@ -1,14 +1,14 @@
 ## Part 1:
 
 # 1. Generating tags
- - How to see tags in a git repository: git tag
- - How to generate a tag in a git repository: git tag -a v*.*.*
- - How to push a tag in a git repository to GitHub: git push
+ - How to see tags in a git repository: `git tag`
+ - How to generate a tag in a git repository: `git tag -a v*.*.*`
+ - How to push a tag in a git repository to GitHub: `git push`
 
 # 2. Semantic:
- - Based on the reference, v*.*.* is a safe way for a tag to match and to be pushed to the repository. It will trigger only when the Git tag matching it is pushed. 
+ - Based on the reference, `v*.*.*` is a safe way for a tag to match and to be pushed to the repository. It will trigger only when the Git tag matching it is pushed. 
 
-Workflow:
+- Workflow:
 	- `name`: what it's for
 	- `on: push: tags: -v*.*.*`: on push, it will run semantic version tags like v1.0.0
 	- `checkout code`: This will pull the recent and most latest version of your project from GitHub so it has the code to build the Docker image
@@ -53,12 +53,16 @@ Workflow:
 - `sudo systemctl enable webhook.service'
 - `sudo systemctl start webhook.service`
 - `sudo systemctl status webhook.service`
+![Webhooks Active](Images/project5webhooksrunning.png)
 - `http://(IP address):9000/`: Your response should be a white screen and an `OK`
+![OK](Images/project5okay.png)
 
 ## Part 3:
 - The Goal of this project is to use Docker, GitHub, and an EC2 Instance to ensure the system is automatically updated with the latest version of the application without any manual intervention when a developer commits and pushes new code.
 - I had a lot of trouble with making the scripts since there was always something wrong with either the directory locations or a wrong command. I'm still a little unsure with DockerHub since it seems to not really be working with my code but I will explore alternatives later on.
-
+- Diagram:
+![Diagram](Images/project5digram.png)
+  
 # Resources:
 - [Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html)
 - [Syntax Guide](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
