@@ -1,12 +1,12 @@
 ## Part 1:
 
 # 1. Generating tags
- - How to see tags in a git repository: git tag
- - How to generate a tag in a git repository: git tag -a v*.*.*
- - How to push a tag in a git repository to GitHub: git push
+ - How to see tags in a git repository: `git tag`
+ - How to generate a tag in a git repository: `git tag -a v*.*.*`
+ - How to push a tag in a git repository to GitHub: `git push`
 
 # 2. Semantic:
- - Based on the reference, v*.*.* is a safe way for a tag to match and to be pushed to the repository. It will trigger only when the Git tag matching it is pushed. 
+ - Based on the reference, `v*.*.*` is a safe way for a tag to match and to be pushed to the repository. It will trigger only when the Git tag matching it is pushed. 
 
 - Workflow:
 	- `name`: what it's for
@@ -53,6 +53,7 @@
 - `sudo systemctl enable webhook.service'
 - `sudo systemctl start webhook.service`
 - `sudo systemctl status webhook.service`
+![Webhooks Active](Images/project5webhooksrunning.png)
 - `http://(IP address):9000/`: Your response should be a white screen and an `OK`
 ![OK](Images/project5okay.png)
 
