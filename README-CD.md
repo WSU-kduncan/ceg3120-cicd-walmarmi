@@ -58,7 +58,9 @@ Workflow:
 ## Part 3:
 - The Goal of this project is to use Docker, GitHub, and an EC2 Instance to ensure the system is automatically updated with the latest version of the application without any manual intervention when a developer commits and pushes new code.
 - I had a lot of trouble with making the scripts since there was always something wrong with either the directory locations or a wrong command. I'm still a little unsure with DockerHub since it seems to not really be working with my code but I will explore alternatives later on.
-
+- Diagram:
+![Diagram(Images/project5digram.png)
+  
 # Resources:
 - [Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html)
 - [Syntax Guide](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
