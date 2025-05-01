@@ -1,7 +1,7 @@
 [
   {
     "id": "redeploy-webhook",
-    "execute-command": "/home/martyjaca/ceg3120-cicd-walmarmi/container.sh",
+    "execute-command": "/home/martyjaca/ceg3120-cicd-walmarmi/deployments/container.sh",
     "command-working-directory": "/home/martyjaca/ceg3120-cicd-walmarmi"
   }
 ]
